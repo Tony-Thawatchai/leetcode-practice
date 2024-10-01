@@ -33,3 +33,6 @@ var mergeAlternately = function (word1, word2) {
     return mergeString
 
 };
+
+
+// Since strings are immutable, String concatenation will copy over the string to a new memory location which is not efficient. We can use an array which is mutable and by push values to its end is O(1) operation (instead of copying over string, which is O(n)). Once we have all the values in the array, we can join them to form a string. This is more efficient than concatenating strings.
