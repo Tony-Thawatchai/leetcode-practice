@@ -34,3 +34,5 @@ var isSubsequence = function (s, t) {
     }
     return false
 };
+
+// Two Pointer Technique is used here. We have two pointers, one for the string s and one for the string t. We iterate through the string t and check if the character at the pointer of s is equal to the character at the pointer of t. If it is, we increment the pointer of s. If the pointer of s is equal to the length of s, we return true. If we finish iterating through t and the pointer of s is not equal to the length of s, we return false.
