@@ -33,3 +33,5 @@ var summaryRanges = function (nums) {
     return answer
 
 };
+
+// use greedy algorithm to find the start and end of the range. If the current number + 1 is equal to the next number, we know that the range is continuous. If it is not, we know that the range has ended. We can then push the range to the answer array. If the range has not started, we can push the current number to the answer array. We can then return the answer array.
