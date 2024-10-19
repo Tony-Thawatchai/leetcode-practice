@@ -62,6 +62,6 @@ var maxNumberOfBalloons = function (text) {
     return Math.min(counter['b'], counter['a'], Math.floor(counter['l'] / 2), Math.floor(counter['o'] / 2), counter['n']);
 
     }
-  }
+  
 
 };
