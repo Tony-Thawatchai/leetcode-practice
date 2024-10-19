@@ -13,10 +13,10 @@ var maxNumberOfBalloons = function (text) {
   //   let counter = 0;
 
   //   if (
-  //     !answerObj["b"] &&
-  //     !answerObj["a"] &&
-  //     !answerObj["l"] &&
-  //     !answerObj["o"] &&
+  //     !answerObj["b"] ||
+  //     !answerObj["a"] ||
+  //     !answerObj["l"] ||
+  //     !answerObj["o"] ||
   //     !answerObj["n"]
   //   ) {
   //     return 0;
@@ -40,28 +40,65 @@ var maxNumberOfBalloons = function (text) {
 
   //   return counter;
 
+  //   ==========================================
+
+  //   let answerObj = {};
+  //   for (let i = 0; i < text.length; i++) {
+  //     answerObj[text[i]]
+  //       ? (answerObj[text[i]] = answerObj[text[i]] + 1)
+  //       : (answerObj[text[i]] = 1);
+  //   }
+
+
+  //   if (
+  //     !answerObj["b"] ||
+  //     !answerObj["a"] ||
+  //     !answerObj["l"] ||
+  //     !answerObj["o"] ||
+  //     !answerObj["n"]
+  //   ) {
+  //     return 0;
+  //   } else {
+  //     return Math.min(
+  //       answerObj["b"],
+  //       answerObj["a"],
+  //       Math.floor(answerObj["l"] / 2),
+  //       Math.floor(answerObj["o"] / 2),
+  //       answerObj["n"]
+  //     );
+  //   }
+
+  //   ==========================================
   let answerObj = {};
   for (let i = 0; i < text.length; i++) {
-    answerObj[text[i]]
-      ? (answerObj[text[i]] = answerObj[text[i]] + 1)
-      : (answerObj[text[i]] = 1);
+      if (
+          text[i] == "b" ||
+          text[i] == "a" ||
+          text[i] == "l" ||
+          text[i] == "o" ||
+          text[i] == "n"
+      ) {
+          answerObj[text[i]]
+              ? (answerObj[text[i]] = answerObj[text[i]] + 1)
+              : (answerObj[text[i]] = 1);
+      }
   }
 
-  let counter = 0;
-
   if (
-    !answerObj["b"] &&
-    !answerObj["a"] &&
-    !answerObj["l"] &&
-    !answerObj["o"] &&
-    !answerObj["n"]
+      !answerObj["b"] ||
+      !answerObj["a"] ||
+      !answerObj["l"] ||
+      !answerObj["o"] ||
+      !answerObj["n"]
   ) {
-    return 0;
+      return 0;
   } else {
-   
-    return Math.min(counter['b'], counter['a'], Math.floor(counter['l'] / 2), Math.floor(counter['o'] / 2), counter['n']);
-
-    }
-  
-
+      return Math.min(
+          answerObj["b"],
+          answerObj["a"],
+          Math.floor(answerObj["l"] / 2),
+          Math.floor(answerObj["o"] / 2),
+          answerObj["n"]
+      );
+  }
 };
